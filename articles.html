@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic Page - Massively by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Massively</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Projects</a></li>
+							<li class="active"><a href="articles.html">Articles</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/ashar-malik-/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/asharmalik19" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://twitter.com/Ashar09271901" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">April 25, 2017</span>
+									<h1>How to connect Python <br />
+									to MySQL</h1>
+									<div class="image main"><img src="images/pic01.jpg" alt="" /></div>
+									<p>In order to connect your python app with the MySQL server (or the database), you need to import a module called mysql.connector in your python file. This module is not available by default, but you can get it by installing a python package called mysql-connector-python.<br />
+
+										Once you have imported the required module in your python file, you can then make a connection with the database, by using a function called connect() in the mysql.connector module. The function takes some arguments such as hostname (the server machine running MySQL server), the user of the database that you want to connect to, the user’s password, and the database name.
+										
+										Suppose you have a MySQL server running on your local machine, you want to connect to the root user, and your database name is ‘python_app_db’. Then you will make a connection like this
+										
+										conn = mysql.connector.connect(host = ’localhost’, user = ’root’, passwd = ‘***’, database = ‘python_app_db’)
+										
+										The connect() function returns a connection object that you need to store in some variable (because you need the connection object).
+										
+										Then you have to create a cursor object. you need this object to execute SQL queries from python. And it’s very simple to create this object. just invoke a method called cursor() on conn (the connection object) like this
+										
+										mycursor = conn.cursor()
+										
+										Now mycursor is our cursor object, which can execute SQL queries by invoking execute() method. The data about the registered users are present in a table called ‘myusers’ (fig 1). To select all the records in ‘myusers’ from your python file, you will invoke execute() method on mycursor and pass the SQL query to it. like this
+										
+										mycursor.execute(“select * from myusers”)
+										
+										Note: you don’t need to add a semicolon at the end of the query in python.
+										
+										The cursor object (mycursor) will execute the query. Now, to read the results of the query mycursor has just executed, you can invoke fetch*() methods on mycursor or you can also iterate on mycursor and print (or do something else) the result.
+										
+										fetchall()
+										
+										If you invoke this method on mycursor, it reads all the results that the above select query has produced. The return of this method is a list that contains tuples. here, a tuple corresponds to one row in your database table (myuser). The fetch*() methods reads the result produced by the last executed query. This means that if you have executed multiple queries, the fetch*() methods will read the result of the last executed query. </p>
+								</header>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>1234 Somewhere Road #87257<br />
+								Nashville, TN 00000-0000</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(000) 000-0000</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">info@untitled.tld</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
