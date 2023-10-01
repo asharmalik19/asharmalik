@@ -1,3 +1,17 @@
-#bullets_inside_projects {
-    
+.about-me h2 {
+    text-align: center;
+}
+
+.about-me div.cv-button-container {
+    text-align: center;
+}
+
+.about-me a.cv-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #596877; /* Blue color; customize as needed */
+    color: #fff; /* Text color */
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
 }
